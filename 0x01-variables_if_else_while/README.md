@@ -1,0 +1,1 @@
+This project is for practising conditional statements and loops.
