@@ -30,7 +30,7 @@ int main(void)
 					putchar(' ');
 					putchar(third_digit + '0');
 					putchar(fourth_digit + '0');
-					if (first_digit != 9 || second_digit != 9 || third_digit != 9 ||
+					if (first_digit != 9 || second_digit != 8 || third_digit != 9 ||
 fourth_digit != 9)
 					{
 						putchar(',');
