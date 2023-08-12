@@ -14,7 +14,7 @@ int main(void)
 	{
 		int second_digit = 0;
 
-		while (second_digit <= 8)
+		while (second_digit < 9)
 
 		{
 			int third_digit = first_digit;
