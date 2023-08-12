@@ -21,7 +21,7 @@ int main(void)
 
 			while (third_digit <= 9)
 			{
-				int fourth_digit = second_digit + 1;
+				int fourth_digit = 1;
 
 				while (fourth_digit <= 9)
 				{
