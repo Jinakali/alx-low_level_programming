@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  *_abs - display absolute
- *@int: parameter is an integer
+ *@num: parameter is an integer
  *
  *Return:0
  */
