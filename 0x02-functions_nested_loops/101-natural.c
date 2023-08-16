@@ -1,5 +1,16 @@
-#include "main.h"
 #include <stdio.h>
+void print_multiple_3_5(int limit);
+
+/**
+  *main - entry
+  *
+  *Return: 0 always
+  */
+int main(void)
+{
+	print_multiple_3_5(1024);
+	return (0);
+}
 
 /**
  * print_multiple_3_5  - print multiples of 3 and 5
