@@ -18,13 +18,13 @@ int main(void)
  */
 void print_f(int limit)
 {
-	 int i, result, a, b;
+	 unsigned long long int i, result, a, b;
 
 	a = 1;
 	b = 2;
 	for (i = 0; i < limit; i++)
 	{
-		printf("%d", a);
+		printf("%llu", a);
 		if (i != (limit - 1))
 			printf(", ");
 		result = a + b;
