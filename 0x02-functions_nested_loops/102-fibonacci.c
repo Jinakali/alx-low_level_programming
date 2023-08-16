@@ -18,7 +18,8 @@ int main(void)
  */
 void print_f(int limit)
 {
-	 unsigned long int i, result, a, b;
+	 unsigned long int result, a, b;
+	 int i;
 
 	a = 1;
 	b = 2;
