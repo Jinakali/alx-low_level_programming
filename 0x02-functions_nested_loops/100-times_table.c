@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *  print_times_table - print times table
  */
@@ -14,47 +13,38 @@ void print_times_table(int n)
 			for (l = 0; l <= n; l++)
 			{
 				product = l * i;
+				if (l !=0 )
+				{
+					if (l != n + 1)
+					{
+						putchar(',');
+						putchar(' ');
+						if (product < 100)
+						{
+						putchar(' ');
+						if (product < 10)
+							putchar(' ');
+						}
+					}
+				}
 				if (product < 10)
 				{
 					putchar(product + '0');
-					if (l != n)
-					{
-						putchar(',');
-						putchar(' ');
-						putchar(' ');
-						putchar(' ');
-					}
 				}
 				else if (product > 99)
 				{
-					q = product / 100;
-					r = product % 100;
-					s = r / 10;
-					t = r % 10;
-					putchar(q + '0');
-					putchar(s + '0');
-					putchar(t + '0');
-					if (l != n)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(product / 100 + '0');
+					putchar((product % 100) / 10 + '0');
+					putchar((product % 100) % 10 + '0');
 				}
 				else
 				{
-					q = product / 10;
-					r = product % 10;
-					putchar(q + '0');
-					putchar(r + '0');
-					if (l != n)
-					{
-						putchar(',');
-						putchar(' ');
-						putchar(' ');
-					}
+					putchar(product / 10 + '0');
+					putchar(product % 10 + '0');
 				}
 			}
 			putchar('\n');
 		}
 	}
+}
 }
