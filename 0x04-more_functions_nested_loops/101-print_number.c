@@ -5,7 +5,8 @@
  */
 void print_number(int n)
 {
-	int place_v;
+	unsigned long int place_v;
+	unsigned long int n = n;
 
 	if (n == 0)
 	{
