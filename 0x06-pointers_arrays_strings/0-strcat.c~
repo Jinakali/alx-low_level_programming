@@ -1,0 +1,24 @@
+#include "main.h"
+int _strlen(char *s);
+/*
+   **_strcat-concatenate a string
+   *@*dest:pointer to the destination string
+   *@*src:pointer to source string
+   *
+   *Return: concatenated string
+   */
+char *_strcat(char *dest, char *src)
+{
+}
+
+int _strlen(char *s)
+{
+	int i;
+
+	while (*s != '\0')
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
