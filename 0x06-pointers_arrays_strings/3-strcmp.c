@@ -10,9 +10,18 @@ int _strcmp(char *s1, char *s2)
 {
 	int i, result;
 
-	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++ )
+	result = 0;
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
 	{
-		result = *s1 - *s2;
+		if (s1[i] != s2[i])
+		{
+			result = *s1 - *s2;
+			break;
+		}
 	}
+	if (s1[i] != '\0' && s2[i] == '\0')
+		result = s1[i];
+	else if ((s2[i] != '\0' && s1[i] == '\0'))
+		result = s2[i] * -1;
 	return (result);
 }
