@@ -15,8 +15,7 @@ char *leet(char *str)
 	{
 		for (j = 0; j < 5; j++)
 		{
-			if (str[i] == letter[j] || (str[i] == letter[j] - 32 && str[i] >= 'a' &&
-str[i] <= 'z'))
+			if (str[i] == letter[j] || str[i] == letter[j] - 32)
 				str[i] = number[j];
 		}
 	}
