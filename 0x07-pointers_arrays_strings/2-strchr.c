@@ -1,5 +1,5 @@
 #include "main.h"
-#define NULL ((char *)0)
+#define NULL 0
 /**
  * _strchr -find first occurence of a character in a string
  * @s: string being looked at
