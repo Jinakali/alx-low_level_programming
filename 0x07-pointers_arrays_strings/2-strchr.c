@@ -21,9 +21,9 @@ char *_strchr(char *s, char c)
 		}
 	}
 	if (s[i] == '\0')
-		{
-			ptr = &s[i];
-			return (ptr);
-		}
+	{
+		ptr = &s[i];
+		return (ptr);
+	}
 	return (NULL);
 }
