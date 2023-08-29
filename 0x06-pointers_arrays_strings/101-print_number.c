@@ -5,7 +5,7 @@
  */
 void print_number(int n)
 {
-	int place_v, num, temp_n;
+	unsigned int place_v, num, temp_n;
 
 	place_v = 1;
 
