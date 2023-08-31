@@ -9,22 +9,22 @@ int _sqrt_recursion_helper(int n, int guess)
 {
 	if (n < 0)
 	{
-		return -1;
+		return (-1);
 	}
 	else if (n == 0 || n == 1)
 	{
-		return n;
+		return (n);
 	}
 	else
 	{
 		int new_guess = (guess + n / guess) / 2;
 		if (new_guess == guess)
 		{
-			return guess;
+			return (guess);
 		}
 		else
 		{
-			return _sqrt_recursion_helper(n, new_guess);
+			return (_sqrt_recursion_helper(n, new_guess));
 		}
 	}
 }
@@ -36,5 +36,5 @@ int _sqrt_recursion_helper(int n, int guess)
  */
 int _sqrt_recursion(int n)
 {
-	return _sqrt_recursion_helper(n, 1);
+	return (_sqrt_recursion_helper(n, 1));
 }
