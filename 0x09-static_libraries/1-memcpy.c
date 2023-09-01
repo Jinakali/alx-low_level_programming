@@ -1,38 +1,21 @@
 #include "main.h"
-int length(char *string);
-
 /**
- * _memcpy -copy character from one mem area to another
- * @dest: memory area copied to
- * @src:  memory area copied from
- * @n: no of characters to be copied
+ *_memcpy - a function that copies memory area
+ *@dest: memory where is stored
+ *@src: memory where is copied
+ *@n: number of bytes
  *
- * Return: pointer
+ *Return: copied memory with n byted changed
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i, l;
+	int r = 0;
+	int i = n;
 
-	l = length(dest);
-	for (i = 0; i < n; i++)
+	for (; r < i; r++)
 	{
-		dest[l + i] = src[i];
+		dest[r] = src[r];
+		n--;
 	}
 	return (dest);
-}
-/**
- * length -find string length
- * @string: string
- *
- * Return: string length
- */
-int length(char *string)
-{
-	int i = 0;
-
-	while (string[i] < '\0')
-	{
-		i++;
-	}
-	return (i);
 }
