@@ -16,7 +16,7 @@ int is_there_letter(int argc, char **argv)
 	for (; c < argc; c++)
 	{
 		f = atoi(*(argv + c));
-		if (f == 0)
+		if (f == 0 && *(argv + c) != '0')
 			return (1);
 	}
 	return (0);
