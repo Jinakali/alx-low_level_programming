@@ -30,12 +30,13 @@ int is_there_letter(int argc, char **argv)
  */
 int main(int argc, char **argv)
 {
-	int i, a, b, j, d, sum, f_sum;
+	int i = 1, a, b, j, d, sum = 0, f_sum = 0;
 
-	i = 1;
-	sum = 0;
-	f_sum = 0;
-
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 	while (i < argc)
 	{
 		a = atoi(*(argv + i));
