@@ -13,19 +13,20 @@ int is_there_letter(int argc, char **argv)
 
 	c = 1;
 
-	for (; c < argc; c++) 
+	for (; c < argc; c++)
 	{
-        char *arg = *(argv + c);
-        f = atoi(arg);
-        
-        if (f == 0 && arg[0] != '0') 
-	{
-            return (1); 
-        }
-    }
-    return (0);
+		char *arg = *(argv + c);
+
+		f = atoi(arg);
+
+		if (f == 0 && arg[0] != '0')
+		{
+			return (1);
+		}
+	}
+	return (0);
 }
-}
+
 /**
  *main-entry to program
  *@argc: no of arguments
