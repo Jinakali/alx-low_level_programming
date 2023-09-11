@@ -8,7 +8,7 @@
 */
 char *_strdup(char *str)
 {
-	unsigned int i, l, j;
+	unsigned int i, l, j = 0;
 	char *str_dup;
 
 	if (str == NULL)
