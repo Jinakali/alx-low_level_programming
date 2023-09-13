@@ -1,7 +1,6 @@
 #include "function_pointers.h"
-#include <stdlib.h>
 /**
-  *print_name-print_name
+  print_name-print_name
   *@name:string
   *@f:function pointer
   */
