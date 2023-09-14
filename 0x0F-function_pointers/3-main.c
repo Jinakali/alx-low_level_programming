@@ -21,11 +21,19 @@ int main(int argc, char **argv)
 	num2 = atoi(argv[3]);
 	operator = argv[2];
 
-	if (get_op_func(operator) == NULL)
+	if (*operator != '+' && *operator != '-' &&
+*operator != '/' && *operator != '*' && *operator != '%')
 	{
 		printf("Error\n");
 		exit(99);
 	}
+	/**
+	 *if (get_op_func(operator) == NULL)
+	 *{
+	 *	printf("Error\n");
+	 *	exit(99);
+	 }
+	 */
 
 	ptr_op = get_op_func(operator);
 	result = ptr_op(num1, num2);
