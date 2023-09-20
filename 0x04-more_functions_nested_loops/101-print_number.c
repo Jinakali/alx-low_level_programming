@@ -5,31 +5,23 @@
  */
 void print_number(int n)
 {
-	unsigned long int place_v;
-	unsigned long int n = n;
+	unsigned int place_v;
 
-	if (n == 0)
-	{
-		_putchar('0');
-	}
+	place_v = 1;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	if (n != 0)
-	{
-		place_v = 1;
 
-		while (n / place_v >= 10)
-		{
-			place_v = place_v * 10;
-		}
-		while (place_v > 0)
-		{
-			_putchar('0' + n / place_v);
-			n = n % place_v;
-			place_v = place_v / 10;
-		}
+	while ((n / place_v) > 9)
+		place_v = place_v * 10;
+
+	while (place_v >= 1)
+	{
+		_putchar(n / place_v + '0');
+		n = n % place_v;
+		place_v = place_v / 10;
 	}
 }
