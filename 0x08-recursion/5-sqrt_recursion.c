@@ -8,9 +8,10 @@ int _sqrt_recursion_helper(int approx, int n)
 {
 	int next_approx = (approx + n / approx) / 2;/* babylon mwthod*/
 
-	if ((approx * approx) <= n && (((approx + 1) * (approx + 1)) > n))
+	if ((approx * approx) <= n && ((approx + 1) * (approx + 1)) > n)
 		return (approx);
-	return (_sqrt_recursion_helper(next_approx, n));
+	else
+		return (_sqrt_recursion_helper(next_approx, n));
 }
 /**
  *_sqrt_recursion- find square root
