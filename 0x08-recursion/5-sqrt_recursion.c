@@ -4,9 +4,9 @@
  *@n: number whose sqrt is to be found
  *Return: sqrt estimate
  */
-int _sqrt_recursion_helper(int approx, int n)
+int _sqrt_recursion_helper(unsigned long approx, unsigned long n)
 {
-	int next_approx = (approx + n / approx) / 2;/* babylon mwthod*/
+	unsigned long next_approx = (approx + n / approx) / 2;/* babylon mwthod*/
 
 	if ((approx * approx) <= n && ((approx + 1) * (approx + 1)) > n)
 		return (approx);
@@ -20,14 +20,14 @@ int _sqrt_recursion_helper(int approx, int n)
  */
 int _sqrt_recursion(int n)
 {
-	int sqrt;
+	unsigned long sqrt;
 
 	if (n <= 0)
 		return (-1);
 
-	sqrt = _sqrt_recursion_helper(1, n);
+	sqrt = _sqrt_recursion_helper(1, (unsigned long) n);
 
-	if (sqrt * sqrt != n)
+	if (sqrt * sqrt != (unsigned long) n)
 		return (-1);
 	return (sqrt);
 }
