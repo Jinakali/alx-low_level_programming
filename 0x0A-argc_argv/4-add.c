@@ -22,13 +22,13 @@ int main(int argc, char **argv)
 	while (argc > 1)
 	{
 		num = atoi(*argv);
-		if (num > 0)
+		if (num > 0 || *argv == 0)
 		{
 			sum = sum + num;
 			argv++;
 			argc--;
 		}
-		else
+		else if (num <= 0 && *argv != 0)
 		{
 			printf("Error\n");
 			return (1);
