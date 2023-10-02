@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <ctype.h>
 #include <stdio.h>
 #include "main.h"
 /**
@@ -22,13 +23,13 @@ int main(int argc, char **argv)
 	while (argc > 1)
 	{
 		num = atoi(*argv);
-		if (num > 0 || *argv == 0)
+		if (isdigit(*argv[0]))
 		{
 			sum = sum + num;
 			argv++;
 			argc--;
 		}
-		else if (num <= 0 && *argv != 0)
+		else if (num <= 0 && !(isdigit(*argv[0])))
 		{
 			printf("Error\n");
 			return (1);
