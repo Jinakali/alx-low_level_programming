@@ -1,5 +1,22 @@
 #include "main.h"
 /**
+ * _strlen - string length
+ *@s:pointer to the string
+ *
+ *Return: string length
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (*s != '\0')
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
+/**
  * _strdup -copy of the string given as a parameter .
  *@str: string
  * Return: duplicated string or NULL;
@@ -11,7 +28,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	dup = malloc(sizeof(str));
+	dup = malloc(sizeof(char) * _strlen(str) + 1);
 
 	if (dup == NULL)
 		return (NULL);
