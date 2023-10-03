@@ -1,0 +1,101 @@
+#include "main.h"
+/**
+ *word_count- count words in string
+ *@s:string
+ *Return:words num
+ */
+int word_count(char *s)
+{
+	int i, c = 0;
+
+	if (s == NULL)
+		return (0);
+
+	i = 0;
+	/*remove all whitespaces b4 first word*/
+	while(s[i] == ' ')
+		i++;
+	if (s[i] == '\0')/*when string empty*/
+		return (0);
+
+	c = 1;/*count first word*/
+	for(;s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ')/*looking at spaces within string*/
+		{
+			/*ignore consecutive spaces*/
+			while (s[i + 1] == ' ')
+				i++;
+			/*wen end of string reached*/
+			if (s[i + 1] == '\0')
+				break;
+			c++;
+		}
+	}
+	return (c);
+}
+char **strtow(char *str)
+{
+	char **word;
+	int i, r, j, k, count = 0;
+
+	if (str == NULL)
+		return (NULL);
+	r = word_count(str) + 1;
+
+	word = malloc(sizeof(word) * r);
+	if (word == NULL)
+		return (NULL);
+
+	for (i = 0; i < r; i++)
+	{
+		for (j = 0; str[j] != '\0'; j++)
+		{
+			while (str[j] == ' ')
+				j++;
+			for(; j != ' '; j++)
+			{
+				count++;
+			}
+
+			word[i] = malloc(sizeof(char) * (count + 1));
+
+			if (word[i] == NULL)
+			{
+				for (k = 0; k < i; k++)
+					free(word[k]);
+				free(word);
+				return (NULL);
+			}
+
+			i++;
+
+			if (str[j] == ' ' &&  str[j + 1] == ' ')
+				j++;
+			if (str[j] == ' ' &&  str[j + 1] == '\0')
+				break;
+		}
+	}
+	for (i = 0; i < r; i++)
+	{
+		k = 0;
+		for (j = 0; str[j] != '\0'; j++)
+		{
+			while (str[j] == ' ')
+				j++;
+			for(; j != ' '; j++)
+			{
+				word[i][k] = str[j];
+				k++;
+			}
+			word[i][k] = '\0';
+			i++;
+
+			if (str[j] == ' ' &&  str[j + 1] == ' ')
+				j++;
+			if (str[j] == ' ' &&  str[j + 1] == '\0')
+				break;
+		}
+	}
+	return (word);
+}
