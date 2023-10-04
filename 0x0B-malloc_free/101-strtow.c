@@ -64,6 +64,7 @@ char *c_strdup(char *str, int start, int end)
 char *_isempty(char *s)
 {
 	int i;
+
 	if (s == NULL || s[0] == '\0')
 		return (NULL);
 	/*check if string just fulll of empty spaces*/
