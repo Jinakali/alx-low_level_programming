@@ -13,13 +13,13 @@ int word_count(char *s)
 
 	i = 0;
 	/*remove all whitespaces b4 first word*/
-	while(s[i] == ' ')
+	while (s[i] == ' ')
 		i++;
 	if (s[i] == '\0')/*when string empty*/
 		return (0);
 
 	c = 1;/*count first word*/
-	for(;s[i] != '\0'; i++)
+	for (; s[i] != '\0'; i++)
 	{
 		if (s[i] == ' ')/*looking at spaces within string*/
 		{
@@ -34,67 +34,67 @@ int word_count(char *s)
 	}
 	return (c);
 }
+/**
+ *_strdup-extract words from string, allocate wordlength byte memory
+*@str:word start
+ *@start:word start
+ *@end:word end
+ *Return: char pointer with word or NULL
+ */
+char *c_strdup(char *str, int start, int end)
+{
+	char *dest;
+	int len = end - start, i;
+
+	dest = malloc(sizeof(char) * (len + 1));
+
+	if (dest == NULL)
+		return (NULL);
+	for (i = start; i < end; i++)
+		dest[i - start] = str[i];
+	dest[i - start] = '\0';
+
+	return (dest);
+}
+/**
+  *strtow-plits a string into words
+  *@str:string
+  *Return: 2d array or NULL
+  */
 char **strtow(char *str)
 {
 	char **word;
-	int i, r, j, k, count = 0;
+	int i, r, j = 0, k = 0, f;
 
 	if (str == NULL)
 		return (NULL);
 	r = word_count(str) + 1;
 
-	word = malloc(sizeof(word) * r);
+	word = malloc(sizeof(char *) * r);
 	if (word == NULL)
 		return (NULL);
 
 	for (i = 0; i < r; i++)
 	{
-		for (j = 0; str[j] != '\0'; j++)
+		while (str[k] == ' ')
+			k++;
+		j = k;/*store position of ist contact with word*/
+		while (str[k] != ' ' && str[k] != '\0')
+			k++;
+		if (k > j)/*words counted btwn spaces*/
 		{
-			while (str[j] == ' ')
-				j++;
-			for(; j != ' '; j++)
-			{
-				count++;
-			}
-
-			word[i] = malloc(sizeof(char) * (count + 1));
-
+			word[i] = c_strdup(str, j, k);
 			if (word[i] == NULL)
 			{
-				for (k = 0; k < i; k++)
-					free(word[k]);
+				for (f = 0; f < i; f++)
+					free(word[f]);
 				free(word);
 				return (NULL);
 			}
-
-			i++;
-
-			if (str[j] == ' ' &&  str[j + 1] == ' ')
-				j++;
-			if (str[j] == ' ' &&  str[j + 1] == '\0')
-				break;
 		}
-	}
-	for (i = 0; i < r; i++)
-	{
-		k = 0;
-		for (j = 0; str[j] != '\0'; j++)
+		else/*end of string reached*/
 		{
-			while (str[j] == ' ')
-				j++;
-			for(; j != ' '; j++)
-			{
-				word[i][k] = str[j];
-				k++;
-			}
-			word[i][k] = '\0';
-			i++;
-
-			if (str[j] == ' ' &&  str[j + 1] == ' ')
-				j++;
-			if (str[j] == ' ' &&  str[j + 1] == '\0')
-				break;
+			word[i] = NULL;
 		}
 	}
 	return (word);
