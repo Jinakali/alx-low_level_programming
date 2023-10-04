@@ -57,16 +57,38 @@ char *c_strdup(char *str, int start, int end)
 	return (dest);
 }
 /**
+  *_isempty- check if strin nul or empty
+  *@s:string
+  *Return: Null if empty or s otherwise
+  */
+char *_isempty(char *s)
+{
+	int i;
+	if (s == NULL || s[0] == '\0')
+		return (NULL);
+	/*check if string just fulll of empty spaces*/
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != ' ' && s[i + 1] != '\0')
+			return (s);
+		i++;
+	}
+	return (NULL);
+}
+/**
   *strtow-plits a string into words
   *@str:string
   *Return: 2d array or NULL
   */
 char **strtow(char *str)
 {
-	char **word;
+	char **word, *n;
 	int i, r, j = 0, k = 0, f;
 
-	if (str == NULL || (str[0] == ' ' && str[1] == '\0') || str[0] == '\0')
+	n = _isempty(str);
+
+	if (n == NULL)
 		return (NULL);
 	r = word_count(str) + 1;
 
