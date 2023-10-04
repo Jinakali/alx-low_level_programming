@@ -35,7 +35,7 @@ int word_count(char *s)
 	return (c);
 }
 /**
- *_strdup-extract words from string, allocate wordlength byte memory
+ *c_strdup-extract words from string, allocate wordlength byte memory
 *@str:word start
  *@start:word start
  *@end:word end
@@ -66,7 +66,7 @@ char **strtow(char *str)
 	char **word;
 	int i, r, j = 0, k = 0, f;
 
-	if (str == NULL)
+	if (str == NULL || (str[0] == ' ' && str[1] == '\0') || str[0] == '\0')
 		return (NULL);
 	r = word_count(str) + 1;
 
