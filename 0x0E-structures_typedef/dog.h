@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #ifndef _DOG_H_
 #define _DOG_H_
+void print_dog(struct dog *d);
 /**
   *struct dog - store dog's details
   *@name:dog's name
