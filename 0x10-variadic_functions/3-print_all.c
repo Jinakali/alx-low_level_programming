@@ -43,6 +43,7 @@ void print_all(const char * const format, ...)
 {
 	int i, j;
 	va_list arg;
+	char *separator = "";
 
 	form arr[] = {
 		{'c', print_c},
@@ -62,8 +63,9 @@ void print_all(const char * const format, ...)
 		{
 			if (arr[j].f == format[i])
 			{
+				printf("%s", separator);
 				arr[j].print(arg);
-				printf(", ");
+				separator = ", ";
 			}
 			j++;
 		}
