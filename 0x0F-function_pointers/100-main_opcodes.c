@@ -9,7 +9,7 @@
 int main(int argc, char **argv)
 {
 	/*point to locattion of main*/
-	unsigned char *op = (unsigned char *) main;
+	unsigned char *op = (char *) main;
 	int i;
 
 	if (argc != 2)
@@ -24,7 +24,12 @@ int main(int argc, char **argv)
 	}
 	for (i = 0; i < atoi(argv[1]); i++)
 	{
-		printf("0x%2x\n", *op++);
+		if (i != 0)
+		{
+			printf(" ");
+		}
+		printf("%02x", op[i]);
 	}
+	printf("\n");
 	return (0);
 }
