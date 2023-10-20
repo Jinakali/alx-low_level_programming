@@ -1,18 +1,16 @@
 section .data
-	hello db "Hello, Holberton",0
+	hello db "Hello, Holberton",10
 
 section .text
 	global main
-	extern printf
-	extern exit
 
 main:
-	;call printf
-	push hello;push the address of the string onto the stack
-	call printf
-	add esp, 4;adjust the stack pointer
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, hello
+	mov rdx, 17
+	syscall
 
-	;exit the program
-	mov eax, 1;syscall for exit(1)
-	xor ebx, ebx;status code
-	int 0x80;invoke the syscall
+	mov rax, 60
+	xor rdi, rdi
+	syscall
