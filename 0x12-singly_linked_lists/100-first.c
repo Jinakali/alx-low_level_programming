@@ -4,6 +4,8 @@
   */
 void before_main(void)
 {
-	printf("You're beat! and yet, you must allow,\n
-I bore my house upon my back!\n");
+	char *s = "You're beat! and yet, you must allow,\n";
+	char *s1 = "I bore my house upon my back!\n";
+
+	printf("%s%s", s, s1);
 }
