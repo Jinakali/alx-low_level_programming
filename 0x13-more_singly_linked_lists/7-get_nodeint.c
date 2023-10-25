@@ -7,18 +7,26 @@
   */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	int i;
+	int i, c;
+	listint_t *temp = head;
 
-	if (head == NULL)
+	if (temp == NULL)
 		return (NULL);
+
+	c = 0;
+	while (temp != NULL)
+	{
+		c++;
+		temp = temp->next;
+	}
+	if ((int)index >= c && index != 0)/*check that node index within bounds, index starts from 0*/
+		return (NULL);
+
 	if (index == 0)
 		return (head);
 	for (i = index; i > 0; i--)
 	{
 		head = head->next;
 	}
-	if (head == NULL)
-		return (NULL);
-	else
-		return (head);
+	return (head);
 }
