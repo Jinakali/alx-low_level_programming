@@ -19,7 +19,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		c++;
 		temp = temp->next;
 	}
-	if ((int)index >= c && index != 0)/*check that node index within bounds, index starts from 0*/
+	/*check that node index within bounds,index starts from 0*/
+	if ((int)index >= c && index != 0)
 		return (NULL);
 
 	if (index == 0)
