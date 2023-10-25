@@ -23,6 +23,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (*head);
 	}
 
+	/*insert new node after previous index*/
+	/*i.e index 3 is actually node 4, insert after 3*/
 	while (temp != NULL)
 	{
 		c++;
